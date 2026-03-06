@@ -1,6 +1,10 @@
 name: Hello Workflow
 
-on: push
+on:
+ push:
+  branches:
+     - main
+     - developer
 
 jobs:
   hello:
@@ -10,15 +14,5 @@ jobs:
       - name: Print Hello
         run: |
               echo "Hello from GitHub Actions!"
-              echo $((1 + 2))
-
-  nice:
-    runs-on: ubuntu-latest
-   
-    steps:
-      - name: Print Hello
-        
-        run: |
-              echo "mast ch!"
-              echo $((1 + 7))
+         
 
