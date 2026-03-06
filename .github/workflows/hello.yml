@@ -1,19 +1,21 @@
-name: Matrix Demo
+name: Artifact Demo
 
 on: push
 
 jobs:
-  matrix-test:
 
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest]
-        node: [16,18]
-
-    runs-on: ${{ matrix.os }}
+  build:
+    runs-on: ubuntu-latest
 
     steps:
-      - run: echo "OS ${{ matrix.os }} Node ${{ matrix.node }}"
+      - name: Create file
+        run: echo "Hello DevOps" > hello.txt
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-file
+          path: hello.txt"
            
          
 
