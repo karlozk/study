@@ -9,3 +9,6 @@ jobs:
     steps:
       - name: Print Hello
         run: echo "Hello from GitHub Actions!"
+             echo $((1 + 2))
+
+   
