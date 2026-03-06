@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Print Hello
-        run: |
-              - run: echo "Triggered by ${{ github.actor }}"
+        run: echo "Triggered by ${{ github.actor }}"
+           
          
 
