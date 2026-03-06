@@ -1,17 +1,19 @@
-name: Hello Workflow
+name: Matrix Demo
 
-on:
- push:
-env: 
-  nice: ${{ secrets.KK }}
+on: push
 
 jobs:
-  hello:
-    runs-on: ubuntu-latest
+  matrix-test:
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: [16,18]
+
+    runs-on: ${{ matrix.os }}
 
     steps:
-      - name: Print Hello
-        run: echo $KK
+      - run: echo "OS ${{ matrix.os }} Node ${{ matrix.node }}"
            
          
 
